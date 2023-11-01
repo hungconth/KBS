@@ -10,8 +10,11 @@ export default function SearchInput() {
     const [myArray, setMyArray] = useState<any>([])
 
     const handleAdd = (title: string) => {
-        setMyArray([...myArray, title])
-        setTextMe('')
+        if(title === '')alert('Nhập từ.')
+        else{
+            setMyArray([...myArray, title])
+            setTextMe('')
+        }
     }
     const handleDelete = (index: number) => {
         setMyArray(
