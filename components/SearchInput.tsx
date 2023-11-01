@@ -11,6 +11,7 @@ export default function SearchInput() {
 
     const handleAdd = (title: string) => {
         setMyArray([...myArray, title])
+        setTextMe('')
     }
     const handleDelete = (index: number) => {
         setMyArray(
@@ -21,10 +22,13 @@ export default function SearchInput() {
     }
     const [param, setParam] = useState('')
     const handleSubmit = () => {
+        var strng = ''
         for (let index = 0; index < myArray.length; index++) {
             const element = myArray[index];
-            setParam(param + element)
+            strng += element
         }
+        setParam(strng)
+        
     }
     console.log(myArray)
     return (
