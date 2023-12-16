@@ -15,7 +15,7 @@ export default function SearchInput() {
         if(textMe==="")alert('Nhập từ.')
         else
         try{
-            const response = await fetch("http://localhost:8000/check-pos/", {
+            const response = await fetch("http://203.162.88.102:12001/kbs/check-pos/", {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export default function SearchInput() {
     const handleSubmit = async () => {
         if(myArray.length <= 1)alert('Không đủ số từ yêu cầu, người dùng cần nhập thêm từ để thực hiện sắp xếp.')
         else{try{
-            const response = await fetch("http://localhost:8000/generate-sentence/",
+            const response = await fetch("http://203.162.88.102:12001/kbs/generate-sentence/",
             {
                 method: 'POST',
                 headers: {
